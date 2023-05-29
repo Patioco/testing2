@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patrickproject
+  labels:
+    app: patrickproject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: patrickproject
+  template:
+    metadata:
+      labels:
+        app: patrickproject
+    spec:
+      containers:
+        - name: patrickproject
+          image: 919390870824.dkr.ecr.us-east-1.amazonaws.com/patrickproject:1.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
