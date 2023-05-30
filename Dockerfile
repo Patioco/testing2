@@ -5,7 +5,8 @@ FROM python:3.8
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY requirements.txt /app
+COPY userapi.py /app
 
 # Install the required packages via pip
 RUN pip install --no-cache-dir \
@@ -20,8 +21,8 @@ RUN pip install --no-cache-dir \
 EXPOSE 5000
 
 # Set the entry point to the Flask application
-ENTRYPOINT ["python"]
+ENTRYPOINT ["python3"]
 
 # Set the default command to run the Flask application
-CMD ["app.py"]
+CMD ["userapi.py"]
 
