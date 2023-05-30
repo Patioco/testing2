@@ -16,12 +16,12 @@ RUN pip install --no-cache-dir \
     mysql-connector-python \
     cryptography
 
-# Expose port 80 for the Flask application
-EXPOSE 80
+# Expose port 5000 for the Flask application
+EXPOSE 5000
 
 # Set the entry point to the Flask application
-ENTRYPOINT ["uwsgi"]
+ENTRYPOINT ["python"]
 
 # Set the default command to run the Flask application
-CMD ["--http", "0.0.0.0:80", "--wsgi-file", "app.py", "--callable", "app", "--master", "--processes", "4", "--threads", "2"]
+CMD ["app.py"]
 
