@@ -1,5 +1,5 @@
 # Use an official Python runtime as the base image
-FROM python:3.8
+FROM python:latest
 
 # Set the working directory in the container to /app
 WORKDIR /app
@@ -20,14 +20,13 @@ RUN pip install --no-cache-dir \
 ENV MYSQL_DATABASE_USER="admin"
 ENV MYSQL_DATABASE_PASSWORD="admin123"
 ENV MYSQL_DATABASE_DB="database-1"
-ENV MYSQL_DATABASE_HOST="localhost")
 ENV MYSQL_DATABASE_PORT="3306"
 
 # Expose port 5000 for the Flask application
 EXPOSE 5000
 
 # Set the entry point to the Flask application
-ENTRYPOINT ["python3"]
+ENTRYPOINT ["python"]
 
 # Set the default command to run the Flask application
 CMD ["userapi.py"]
