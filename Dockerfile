@@ -17,6 +17,12 @@ RUN pip install --no-cache-dir \
     mysql-connector-python \
     cryptography
 
+ENV MYSQL_DATABASE_USER="admin"
+ENV MYSQL_DATABASE_PASSWORD="admin123"
+ENV MYSQL_DATABASE_DB="database-1"
+ENV MYSQL_DATABASE_HOST="44.207.6.150")
+ENV MYSQL_DATABASE_PORT="3306"
+
 # Expose port 5000 for the Flask application
 EXPOSE 5000
 
